@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f5f4f0" />
+<title>reHyve</title>
+<meta name="description" content="reHyve — smart, science-backed liquid meals made with clean plant-based ingredients. Built for the Indian lifestyle. No added sugar, no preservatives. Refresh. Recover. Rebuild." />
+<link rel="icon" type="image/svg+xml" href="assets/favicon-black.svg" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+
+<!-- Social / OG -->
+<meta property="og:title" content="reHyve — The Future of Meal Replacement" />
+<meta property="og:description" content="Smart, science-backed liquid meals. Clean, plant-based, built for the Indian lifestyle." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts (brand: Figtree + Source Serif 4) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ Gooey SVG filter ============ -->
+<svg class="goo-filter" aria-hidden="true" focusable="false"><defs><filter id="threshold"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140"/></filter></defs></svg>
+
+<!-- ============ Page-load progress / curtain ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <img src="assets/logo-black.svg" alt="reHyve" class="loader-logo" width="150" height="31" />
+  <span class="loader-bar"><i></i></span>
+</div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#main" class="brand" aria-label="reHyve home">
+      <img src="assets/logo-black.svg" alt="reHyve" class="brand-logo" width="118" height="24" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#product">Product</a>
+      <a href="#science">Science</a>
+      <a href="#flavors">Flavors</a>
+      <a href="#ritual">The Ritual</a>
+    </nav>
+    <div class="nav-end">
+      <a href="#shop" class="btn btn-dark nav-cta">Shop now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#product">Product</a>
+    <a href="#science">Science</a>
+    <a href="#flavors">Flavors</a>
+    <a href="#ritual">The Ritual</a>
+    <a href="#shop" class="mm-cta">Shop now</a>
+  </nav>
+  <p class="mm-foot">Refresh. Recover. Rebuild.</p>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="wave-wrap" aria-hidden="true">
+    <svg viewBox="0 0 1554 434" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+      <path fill="#1a1a1a" d="M1140.08,180.34c-9.66,0-19.45-2.02-29.79-6.12-10.87-4.31-22.08-10.85-34.26-19.98-22.61-16.94-45.08-40.36-66.81-63-21.11-22-42.93-44.74-64.37-60.86-11.52-8.67-22.05-14.82-32.2-18.81-11.36-4.47-21.96-6.13-32.41-5.09-35.14,3.5-54.8,37.34-73.82,70.06-9.37,16.12-19.05,32.78-30.34,45.1-6.08,6.63-12.14,11.54-18.55,15.02-7.18,3.9-14.61,5.91-22.71,6.15-.53.02-1.06.02-1.58.02-20.71,0-34.05-12.23-49.45-26.34-16.92-15.51-36.1-33.1-69.68-37.1-49.61-5.91-94.63,21.78-134.34,46.21-32.83,20.2-61.18,37.64-85.2,32.03-30.23-7.07-30.71-45.6-31.19-82.87-.22-17.59-.43-34.2-3.61-47.57-1.7-7.17-4.1-12.71-7.33-16.93-3.61-4.72-8.17-7.69-13.95-9.1-6.65-1.62-14.81-1.02-24.25,1.8-10.68,3.19-23.33,9.3-37.6,18.18-32.99,20.51-76.09,56.66-128.1,107.42l-.17-.18c52.03-50.78,95.14-86.93,128.14-107.45,14.29-8.89,26.96-15.01,37.66-18.21,9.48-2.83,17.68-3.44,24.38-1.8,5.83,1.42,10.44,4.43,14.08,9.19,3.25,4.25,5.67,9.82,7.38,17.03,3.18,13.4,3.39,30.02,3.61,47.63.47,37.17.96,75.61,31,82.63,23.91,5.59,52.23-11.83,85.01-32,39.75-24.45,84.8-52.17,134.5-46.24,33.66,4.01,52.87,21.62,69.82,37.16,15.35,14.08,28.67,26.28,49.28,26.28.52,0,1.04,0,1.57-.02,8.06-.24,15.45-2.24,22.6-6.12,6.38-3.46,12.43-8.36,18.48-14.97,11.27-12.3,20.95-28.95,30.31-45.06,19.05-32.77,38.74-66.66,74.01-70.18,10.49-1.04,21.13.63,32.53,5.11,10.16,4,20.72,10.16,32.26,18.84,21.45,16.13,43.28,38.89,64.4,60.89,21.72,22.64,44.19,46.05,66.78,62.98,12.17,9.12,23.36,15.64,34.21,19.95,12.19,4.83,23.63,6.77,34.97,5.9,16.49-1.26,30.13-8.22,42.94-21.9,11.42-12.2,20.73-28.18,30.59-45.1,11.1-19.06,22.58-38.77,38.28-55.24,17.84-18.71,38.46-30.1,63.03-34.82,16.92-3.25,35.69-3.28,55.78-.1,18.4,2.91,38.38,8.59,59.4,16.88,35.62,14.04,75.55,36.13,118.69,65.63l-.14.21c-43.12-29.5-83.04-51.57-118.64-65.61-21-8.28-40.97-13.95-59.35-16.86-20.07-3.18-38.81-3.14-55.7.1-24.53,4.71-45.1,16.07-62.9,34.75-15.68,16.45-27.15,36.14-38.25,55.19-9.86,16.93-19.18,32.93-30.62,45.15-12.85,13.73-26.55,20.71-43.1,21.98-1.76.13-3.53.2-5.3.2Z"/>
+      <path fill="#1a1a1a" d="M842.58,433.76c-45.62,0-89.92-28.72-136.54-58.95-53.04-34.39-107.88-69.96-168.42-64.5-39.73,3.57-57.74,28.19-76.81,54.26-19.25,26.32-39.16,53.53-83.17,59.24-24.38,3.16-43.52-7.07-67.77-20.02-24.7-13.19-55.43-29.61-101.54-35.1-62.56-7.46-132.47,7.48-207.77,44.39l-.55-1.12c75.52-37.02,145.67-51.99,208.47-44.51,46.34,5.52,77.19,22,101.98,35.24,24.05,12.84,43.05,22.99,67.02,19.88,43.49-5.64,63.23-32.64,82.33-58.74,19.24-26.3,37.41-51.14,77.7-54.76,60.97-5.48,116,30.19,169.21,64.69,51.51,33.39,100.15,64.95,150.66,57.7,47-6.73,67.65-41.18,85.88-71.58,15.76-26.28,30.64-51.11,59.93-52.54,31.87-1.59,60.21,26.18,90.2,55.54,31.48,30.82,64.01,62.66,102.37,60.87,23.2-1.1,36.12-20.15,51.08-42.22,17.64-26.02,37.63-55.51,79.98-63.27,47.29-8.66,109.14,12.71,183.87,63.52l-.7,1.03c-74.45-50.62-136.01-71.93-182.95-63.32-41.84,7.67-61.68,36.93-79.18,62.75-15.14,22.34-28.22,41.64-52.05,42.76-1.07.05-2.13.08-3.19.08-37.49,0-69.3-31.15-100.11-61.3-29.79-29.17-57.92-56.67-89.27-55.19-28.62,1.4-42.66,24.82-58.92,51.94-18.37,30.63-39.18,65.35-86.76,72.17-5.01.72-10,1.06-14.97,1.06Z"/>
+    </svg>
+  </div>
+
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="tag fade" data-fade="1"><span class="tag-dot"></span>BUILT ON SCIENCE</div>
+      <h1 class="fade" data-fade="2">Rethink Health<br><em>Positively.</em></h1>
+      <p class="hero-sub fade" data-fade="3">Smart, science-backed fuel for endurance and performance. Designed to keep you moving when it matters most.</p>
+      <div class="hero-actions fade" data-fade="4">
+        <a href="#shop" class="btn btn-dark btn-lg magnetic">Early Access</a>
+        <a href="#science" class="btn btn-ghost btn-lg">Learn the science</a>
+      </div>
+      <div class="badges fade" data-fade="5">
+        <span class="badge"><span class="badge-dot"></span>Vegan friendly</span>
+        <span class="badge"><span class="badge-dot"></span>Gut friendly</span>
+        <span class="badge"><span class="badge-dot"></span>Easy to digest</span>
+      </div>
+    </div>
+
+    <div class="hero-right fade" data-fade="3">
+      <div class="ring ring-3"></div>
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="orb"></div>
+      <div class="gooey-wrap">
+        <div class="goo-inner">
+          <span class="goo-t" id="gt1"></span>
+          <span class="goo-t" id="gt2"></span>
+        </div>
+      </div>
+      <span class="float-chip chip-a">Dual Carb Fuel</span>
+      <span class="float-chip chip-b">Caffeine Boost</span>
+      <span class="float-chip chip-c">Electrolyte Blend</span>
+    </div>
+  </div>
+
+  <a href="#product" class="scroll-cue" aria-label="Scroll to product">
+    <span>Scroll</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </a>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Built for India</span><i>✺</i><span>Science Backed</span><i>✺</i><span>Revive with reHyve</span><i>✺</i><span>Built for India</span><i>✺</i><span>Science Backed</span><i>✺</i><span>Revive with reHyve</span><i>✺</i><span>Built for India</span><i>✺</i><span>Science Backed</span><i>✺</i><span>Revive with reHyve</span><i>✺</i>
+    <span>Built for India</span><i>✺</i><span>Science Backed</span><i>✺</i><span>Revive with reHyve</span><i>✺</i><span>Built for India</span><i>✺</i><span>Science Backed</span><i>✺</i><span>Revive with reHyve</span><i>✺</i><span>Built for India</span><i>✺</i><span>Science Backed</span><i>✺</i><span>Revive with reHyve</span><i>✺</i>
+  </div>
+</section>
+
+<!-- ============ INTRO STATEMENT ============ -->
+<section class="intro" id="product">
+  <div class="wrap intro-grid">
+    <div class="intro-col">
+      <p class="eyebrow reveal">Introducing reHyve</p>
+      <h2 class="intro-head reveal">reHyve is building a movement toward <em>better nutrition.</em></h2>
+      <p class="intro-lead reveal">We exist to bridge the gap between perception and nutrition — creating science-backed products that make better choices easier and more accessible.</p>
+    </div>
+    <div class="intro-aside reveal">
+      <div class="spin-stage">
+        <div class="spin-ring" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <defs>
+              <path id="spinPath" fill="none" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/>
+            </defs>
+            <g class="spin-g">
+              <text class="spin-text"><textPath href="#spinPath" xlink:href="#spinPath" startOffset="0%" textLength="251.2" lengthAdjust="spacingAndGlyphs">RUN FURTHER • RIDE LONGER • PUSH HARDER • REPEAT •</textPath></text>
+            </g>
+          </svg>
+        </div>
+        <div class="spin-photo">
+          <svg class="spin-hy" viewBox="80 90 700 480" role="img" aria-label="reHyve">
+            <path d="M768.14,202.04v242.06c-7.35,100.07-83.48,112.9-148.97,112.9-70.54,0-142.64-11.76-143.55-98.73h59.8c.27,33.5,25.02,38.92,83.75,38.92s89.17-10.47,89.17-70.06v-29.63c-23.19,21.1-62.7,39.3-101.2,39.3-118.86,0-132.6-79.4-132.6-139.15v-95.61h59.8v95.61c0,54.87,10.52,79.35,72.8,79.35,46.38,0,84.93-16.75,101.2-43.81v-131.15h59.8Z"/>
+            <polygon points="377.74 98.51 377.74 236.17 153.57 236.17 153.57 98.51 93.67 98.51 93.67 437.02 153.57 437.02 153.57 296.08 377.74 296.08 377.74 437.02 437.65 437.02 437.65 98.51 377.74 98.51"/>
+          </svg>
+        </div>
+      </div>
+      <a href="#flavors" class="text-link">Explore the flavors
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS / NUTRITION ============ -->
+<section class="benefits" id="benefits">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow reveal">Performance fuel</p>
+      <h2 class="reveal">Energy when it<br><em>matters most.</em></h2>
+      <p class="sec-sub reveal">Fast-acting fuel designed to support endurance, focus, and performance during training, racing, and long efforts.</p>
+    </div>
+
+    <div class="bento">
+      <div class="bcard bcard-lg accent-green reveal">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div class="bcard-stat"><b data-count="25">0</b>g</div>
+        <h3>Dual-Carb Energy</h3>
+        <p>A blend of maltodextrin and fructose designed to deliver rapid energy and efficient carbohydrate absorption during exercise.</p>
+      </div>
+      <div class="bcard bcard-lg accent-blue reveal">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <div class="bcard-stat"><b data-count="30">0</b>mg</div>
+        <h3>Caffeine</h3>
+        <p>Supports alertness, focus, and endurance when fatigue begins to set in.</p>
+      </div>
+
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg><h4>Dual-Carb Fuel</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg><h4>Electrolyte Blend</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 21 7 21 17 12 22 3 17 3 7"/><path d="M12 22V12"/><path d="m21 7-9 5-9-5"/></svg><h4>300mg Taurine</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8z"/></svg><h4>Endurance Support</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14l4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg><h4>Performance Caffeine</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="10" y1="2" x2="14" y2="2"/><line x1="12" y1="14" x2="15" y2="11"/><circle cx="12" cy="14" r="8"/></svg><h4>Fast Absorption</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg><h4>Hydration Support</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg><h4>Vegan Friendly</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="5.64" y1="5.64" x2="18.36" y2="18.36"/></svg><h4>Gluten Free</h4></div>
+      <div class="bcard reveal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg><h4>Built for Endurance</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCIENCE ============ -->
+<section class="magnet-sec" id="science">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Who it's for</p>
+      <h2 class="reveal">Built for <em>every effort.</em></h2>
+    </div>
+
+    <div class="magnet-grid sci-row">
+      <div class="magnet-copy sci-copy">
+        <p class="eyebrow reveal">Fast-absorbing endurance fuel</p>
+        <div class="magnetic reveal" id="magnetic" data-text="40g Energy Gel" data-hover="REFUEL">
+          <span class="magnetic-base">40g Energy Gel</span>
+        </div>
+        <p class="sci-desc reveal">A compact 40g sachet delivering fast, convenient energy for runners, cyclists, HYROX athletes, triathletes, and fitness enthusiasts—so you can stay fueled when performance matters most.</p>
+      </div>
+      <div class="magnet-media">
+        <div class="gallery-rail">
+          <div class="gallery-track" id="galleryTrack">
+            <figure class="gallery-item is-active" data-label="HYROX Athlete">
+              <img src="assets/gallery/04-hyrox.jpg" alt="HYROX athlete" loading="lazy" />
+            </figure>
+            <figure class="gallery-item" data-label="Track Running / Sprint Training">
+              <img src="assets/gallery/01-sprint.jpg" alt="Track running / sprint training" loading="lazy" />
+            </figure>
+            <figure class="gallery-item" data-label="Marathon / Long-Distance Running">
+              <img src="assets/gallery/02-marathon.jpg" alt="Marathon / long-distance running" loading="lazy" />
+            </figure>
+            <figure class="gallery-item" data-label="Cycling">
+              <img src="assets/gallery/03-cycling.jpg" alt="Cycling" loading="lazy" />
+            </figure>
+            <figure class="gallery-item" data-label="Gym / Functional Training">
+              <img src="assets/gallery/05-gym.jpg" alt="Gym / functional training" loading="lazy" />
+            </figure>
+          </div>
+          <div class="gallery-rotate" id="galleryRotate" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLAVORS (color section) ============ -->
+<section class="flavors" id="flavors">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Choose your fuel</p>
+      <h2 class="reveal">Pick your <em>flavor.</em></h2>
+    </div>
+
+    <div class="flavor-stage reveal">
+      <div class="flavor-preview" id="flavorPreview">
+        <div class="fp-bg"></div>
+        <div class="fp-content">
+          <span class="fp-index" id="fpIndex">01 / 03</span>
+          <h3 class="fp-name" id="fpName">Blueberry Lemonade</h3>
+          <p class="fp-desc" id="fpDesc">Tart wild blueberry meets zesty lemonade — a bright, refreshing hit of fast-acting energy.</p>
+          <div class="fp-notes" id="fpNotes"></div>
+        </div>
+        <div class="fp-glass" id="fpGlass" aria-hidden="true">
+          <svg class="fp-sachet" viewBox="0 0 120 300" role="img" aria-label="reHyve energy gel sachet">
+            <defs>
+              <pattern id="crimp" width="6" height="20" patternUnits="userSpaceOnUse">
+                <rect width="6" height="20" fill="rgba(255,255,255,.55)"/>
+                <line x1="3" y1="3" x2="3" y2="17" stroke="rgba(26,26,26,.16)" stroke-width="1.4"/>
+              </pattern>
+            </defs>
+            <path d="M104 22 l9 5 l-9 5 z" fill="rgba(255,255,255,.5)"/>
+            <rect x="16" y="16" width="88" height="20" rx="4" fill="url(#crimp)"/>
+            <rect x="20" y="32" width="80" height="236" rx="16" fill="rgba(255,255,255,.42)" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+            <rect x="30" y="44" width="13" height="210" rx="6.5" fill="rgba(255,255,255,.22)"/>
+            <rect x="16" y="264" width="88" height="20" rx="4" fill="url(#crimp)"/>
+            <text x="60" y="150" text-anchor="middle" font-family="Figtree, sans-serif" font-weight="800" font-size="19" letter-spacing="-1" fill="rgba(26,26,26,.55)">reHyve</text>
+            <text x="60" y="170" text-anchor="middle" font-family="Figtree, sans-serif" font-weight="700" font-size="8.5" letter-spacing="3" fill="rgba(26,26,26,.4)">ENERGY GEL</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="flavor-tabs" role="tablist" aria-label="Flavors">
+        <button class="ftab is-active" role="tab" aria-selected="true"
+          data-name="Blueberry Lemonade" data-color="#4B6FB0" data-ink="#FDF7E3"
+          data-desc="Tart wild blueberry meets zesty lemonade — a bright, refreshing hit of fast-acting energy."
+          data-notes="Wild Blueberry · Citrus · 100 kcal · 25g carbs">
+          <span class="ftab-sw" style="background:#4B6FB0"></span>Blueberry Lemonade</button>
+        <button class="ftab" role="tab" aria-selected="false"
+          data-name="Watermelon" data-color="#FD4659" data-ink="#1a1a1a"
+          data-desc="Crisp, juicy watermelon — a clean, refreshing burst of energy for race day."
+          data-notes="Watermelon · Sea Salt · 100 kcal · 25g carbs">
+          <span class="ftab-sw" style="background:#FD4659"></span>Watermelon</button>
+        <button class="ftab" role="tab" aria-selected="false"
+          data-name="Chocolate" data-color="#6B4B3E" data-ink="#FDF7E3"
+          data-desc="Rich, smooth cacao — dependable, dessert-like fuel for your longest efforts."
+          data-notes="Dutch Cacao · Sea Salt · 110 kcal · 25g carbs">
+          <span class="ftab-sw" style="background:#6B4B3E"></span>Chocolate</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RITUAL ============ -->
+<section class="ritual" id="ritual">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">The reHyve ritual</p>
+      <h2 class="reveal">Three R's. <em>One habit.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-no">01</span>
+        <h3>Refresh</h3>
+        <p>Hydration powers every system in the body, supporting energy, focus, and overall wellbeing.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-no">02</span>
+        <h3>Recover</h3>
+        <p>Proper nutrition helps your body replenish, restore, and prepare for the demands of tomorrow.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-no">03</span>
+        <h3>Rebuild</h3>
+        <p>Movement is how we adapt, improve, and grow stronger — physically and mentally.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="quotes" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow reveal">Loved by athletes</p>
+      <h2 class="reveal">From the <em>hive.</em></h2>
+    </div>
+    <div class="quote-grid">
+      <figure class="quote reveal">
+        <blockquote>"I've tried dozens of gels over the years, so getting early access to reHyve before launch was exciting. It felt great to be part of shaping something built for Indian athletes."</blockquote>
+        <figcaption><span class="q-av">A</span><span><b>Arjun S.</b>Half Marathon Runner, Chennai</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote>"When reHyve sent me a few pre-launch samples, I honestly wasn't expecting much. After testing them during training, I couldn't wait to see the product hit the market."</blockquote>
+        <figcaption><span class="q-av">P</span><span><b>Priya K.</b>Running Enthusiast, Bengaluru</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote>"Being among the first people to try reHyve Energy Gel felt special. The team genuinely cared about feedback, and it shows in the final product."</blockquote>
+        <figcaption><span class="q-av">R</span><span><b>Rahul M.</b>Cyclist, Chennai</span></figcaption>
+      </figure>
+    </div>
+    <div class="logos-row reveal">
+      <span>As featured in</span>
+      <div class="logos-strip">
+        <em>YourStory</em><em>Vogue India</em><em>Mint</em><em>Inc42</em><em>The Hindu</em>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOP / PRICING ============ -->
+<section class="shop" id="shop">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow reveal">Start your ritual</p>
+      <h2 class="reveal">Choose your <em>plan.</em></h2>
+      <p class="shop-note reveal">Limited early access · Save 20% · Be first to fuel with reHyve</p>
+    </div>
+
+    <article class="offer reveal">
+      <div class="offer-main">
+        <span class="offer-badge">Early access</span>
+        <h3 class="offer-title">Starter Pack</h3>
+        <p class="offer-sub">Fuel your next adventure</p>
+        <ul class="offer-feat">
+          <li>5 × 40g Energy Gels</li>
+          <li>Fast-absorbing dual-carb formulation</li>
+          <li>Designed for runners, cyclists and endurance athletes</li>
+          <li>Easy-to-carry race-day fuel</li>
+          <li>Early access pricing before public launch</li>
+          <li>Nutrition tips and endurance fueling updates</li>
+        </ul>
+      </div>
+      <div class="offer-buy">
+        <div class="offer-price">
+          <span class="offer-was">₹550</span>
+          <span class="offer-now"><span class="cur">₹</span>440</span>
+        </div>
+        <span class="offer-label">Early Access Price</span>
+        <a href="#join" class="btn btn-dark btn-block offer-cta">Join the hive</a>
+        <p class="offer-foot">Reserve your spot — be among the first to fuel with reHyve.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-head">
+      <p class="eyebrow reveal">Good questions</p>
+      <h2 class="reveal">Everything else.</h2>
+      <p class="faq-sub reveal">Still curious? Write to us at <a href="mailto:team@rehyve.com">team@rehyve.com</a>.</p>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>What is a 40g energy gel and how does it work?<span class="faq-ic" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>Our 40g Energy Gel is designed to provide fast, efficient fuel during endurance activities such as running, cycling, triathlon, and long training sessions. It uses a dual-carbohydrate system that combines multiple carbohydrate sources to help deliver energy quickly while supporting sustained performance. The gel is rapidly absorbed, easy to consume on the move, and helps replenish the energy your muscles use during prolonged exercise.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>When should I take the gel during training or racing?<span class="faq-ic" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>For best results, consume one gel 5–15 minutes before activity or during exercise when your energy demands increase. During longer sessions, athletes commonly take a gel every 30–45 minutes depending on intensity, duration, and individual carbohydrate needs. Practicing your fueling strategy during training is recommended before race day.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to take it with water?<span class="faq-ic" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>Our dual-carb formulation is designed for easy consumption during exercise. While the gel can be taken on its own, consuming water alongside any energy gel can improve comfort and hydration, especially during long events or in hot conditions. Always follow the hydration strategy that works best for your sport and conditions.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How many gels can I consume per hour?<span class="faq-ic" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>The ideal amount depends on your body size, exercise intensity, and duration. Because our gel uses a dual-carbohydrate system, it is designed to support higher carbohydrate intake during endurance exercise compared to single-source carbohydrate products. Many endurance athletes aim for a consistent carbohydrate intake throughout their session, using multiple gels over longer durations as part of their fueling plan.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Will it cause stomach discomfort or energy crashes?<span class="faq-ic" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>Our gel is formulated with a dual-carb blend to support efficient carbohydrate delivery and absorption during exercise. By utilizing multiple carbohydrate pathways, the formulation is designed to help provide a steadier supply of energy while improving gastrointestinal tolerance during prolonged efforts. As with any sports nutrition product, individual tolerance can vary, so we recommend testing your fueling strategy during training before competition.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What makes the dual-carb formulation better?<span class="faq-ic" aria-hidden="true"></span></summary>
+        <div class="faq-a"><p>Traditional gels often rely on a single carbohydrate source. Our dual-carb approach combines complementary carbohydrate sources that utilize different transport mechanisms in the body. This helps support efficient carbohydrate delivery during endurance exercise, making it easier for athletes to fuel consistently over long distances while maintaining performance when it matters most.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta" id="join">
+  <div class="wrap cta-inner">
+    <h2 class="reveal">Join the <em>hive.</em></h2>
+    <p class="reveal">Get early drops, nutrition notes and 10% off your first box.</p>
+    <form class="cta-form reveal" id="ctaForm" method="POST"
+          action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc"
+          target="zcSignupHidden" novalidate>
+      <label class="sr-only" for="email">Email address</label>
+      <input id="email" name="CONTACT_EMAIL" type="email" placeholder="you@email.com" autocomplete="email" required />
+      <button class="btn btn-dark" type="submit">Get 10% off</button>
+      <!-- Zoho required hidden fields -->
+      <input type="hidden" name="submitType" value="optinCustomView" />
+      <input type="hidden" name="emailReportId" value="" />
+      <input type="hidden" name="formType" value="QuickForm" />
+      <input type="hidden" name="zx" value="1dfc677d85" />
+      <input type="hidden" name="zcvers" value="2.0" />
+      <input type="hidden" name="oldListIds" value="" />
+      <input type="hidden" name="mode" value="OptinCreateView" />
+      <input type="hidden" name="zcld" value="151346f2036389cd" />
+      <input type="hidden" name="zctd" value="151346f203636e29" />
+      <input type="hidden" name="zc_trackCode" value="ZCFORMVIEW" />
+      <input type="hidden" name="zc_formIx" value="3z68e1d591463554affc09c914d239ed69a33b4a4b6ef9f13fb98e4be2c7274180" />
+    </form>
+    <iframe name="zcSignupHidden" style="display:none" title="signup"></iframe>
+    <p class="cta-msg" id="ctaMsg" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="foot-wave" aria-hidden="true"></div>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="assets/logo-white.svg" alt="reHyve" class="foot-logo" width="150" height="31" />
+      <p>Refresh. Recover. Rebuild.</p>
+      <p class="foot-mini">The future of meal replacement — built for the Indian lifestyle.</p>
+    </div>
+    <nav class="foot-col" aria-label="Product">
+      <h4>Product</h4>
+      <a href="#benefits">Nutrition</a>
+      <a href="#science">Science</a>
+      <a href="#flavors">Flavors</a>
+      <a href="#shop">Shop</a>
+    </nav>
+    <nav class="foot-col" aria-label="Company">
+      <h4>Company</h4>
+      <a href="#product">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="mailto:team@rehyve.com">Contact</a>
+    </nav>
+    <nav class="foot-col" aria-label="Social">
+      <h4>Follow</h4>
+      <a href="https://www.instagram.com/rehyve/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/REHYVE" target="_blank" rel="noopener">X / Twitter</a>
+      <a href="https://www.linkedin.com/company/rehyve/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 reHyve. All rights reserved.</span>
+    <span class="foot-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
