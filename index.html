@@ -552,6 +552,31 @@ h2 em{color:var(--muted)}
   display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
 .offer-eyebrow{display:inline-block;color:#7a8d3f;font-size:12px;font-weight:800;
   letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.hyrox-offer{max-width:1040px;margin:22px auto 0;border-radius:var(--radius-lg);
+  background:linear-gradient(180deg,rgba(107,162,146,.1),rgba(107,162,146,.05));
+  border:1px solid rgba(107,162,146,.3);padding:clamp(22px,3vw,32px) clamp(22px,3.4vw,40px);
+  transition:box-shadow .4s var(--ease),border-color .4s var(--ease)}
+.hyrox-offer-in{display:flex;align-items:center;justify-content:space-between;gap:clamp(18px,3vw,40px);flex-wrap:wrap}
+.hyrox-offer-tx{min-width:0;flex:1 1 320px}
+.hyrox-offer-flag{display:inline-block;background:var(--green);color:#fff;font-size:11px;font-weight:800;
+  letter-spacing:.14em;padding:6px 13px;border-radius:100px;margin-bottom:12px}
+.hyrox-offer-tx h3{font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;color:var(--ink)}
+.hyrox-offer-tx h3 em{font-style:normal;color:var(--green)}
+.hyrox-offer-tx p{font-size:14px;line-height:1.55;color:var(--muted);margin-top:8px;max-width:520px}
+.hyrox-offer-actions{display:flex;flex-wrap:wrap;gap:11px;flex-shrink:0}
+.hyrox-btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;text-decoration:none;
+  border-radius:100px;padding:13px 22px;border:1.5px solid rgba(26,26,26,.28);color:var(--ink);background:transparent;
+  transition:background .25s var(--ease),transform .25s var(--ease),border-color .25s var(--ease)}
+.hyrox-btn svg{width:17px;height:17px;stroke:currentColor}
+.hyrox-btn:hover{background:rgba(26,26,26,.06);transform:translateY(-1px)}
+.hyrox-btn-primary{background:var(--green);border-color:var(--green);color:#fff}
+.hyrox-btn-primary:hover{background:#5d8f7f;border-color:#5d8f7f}
+.hyrox-offer.glow{animation:hyroxGlow 2.2s var(--ease) 1}
+@keyframes hyroxGlow{
+  0%{box-shadow:0 0 0 0 rgba(107,162,146,0);border-color:rgba(107,162,146,.3)}
+  18%{box-shadow:0 0 0 6px rgba(107,162,146,.28),0 22px 50px -20px rgba(107,162,146,.7);border-color:var(--green)}
+  100%{box-shadow:0 0 0 0 rgba(107,162,146,0);border-color:rgba(107,162,146,.3)}}
+
 .offer-deals{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);
   display:flex;flex-direction:column;gap:11px;width:100%}
 .offer-deals>.deal{display:flex;align-items:flex-start;gap:11px;font-size:13px;line-height:1.5;color:var(--muted);text-align:left}
@@ -612,6 +637,9 @@ h2 em{color:var(--muted)}
   .offer-price{justify-content:center;margin:14px 0 18px}
   .hyrox-price-tag{align-self:center;margin-bottom:0}
   .deal{text-align:left}
+  .hyrox-offer-in{flex-direction:column;align-items:flex-start}
+  .hyrox-offer-actions{width:100%}
+  .hyrox-btn{flex:1 1 auto;justify-content:center}
 }
 
 /* ============================================================
@@ -1312,21 +1340,27 @@ h2 em{color:var(--muted)}
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
             </div>
           </div>
-          <div class="deal" id="hyrox-deal">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"></circle><path d="m8.5 13.5-2 7 5.5-3 5.5 3-2-7"></path></svg>
-            <div class="deal-tx">
-              <span><strong>30% off for HYROX participants</strong> — join the hive list, then DM your ticket on Instagram or WhatsApp.</span>
-              <div class="deal-btns">
-                <a href="https://instagram.com/rehyve" target="_blank" rel="noopener" class="deal-btn">DM @rehyve on Instagram
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
-                <a href="https://wa.me/919363966779" target="_blank" rel="noopener" class="deal-btn">WhatsApp your ticket
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20l1.5-5A8.5 8.5 0 1 1 21 11.5z"></path></svg></a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </article>
+
+    <aside class="hyrox-offer reveal" id="hyrox-deal" aria-labelledby="hyroxHead">
+      <div class="hyrox-offer-in">
+        <div class="hyrox-offer-tx">
+          <span class="hyrox-offer-flag">HYROX</span>
+          <h3 id="hyroxHead">Racing HYROX? Get <em>30% off</em> — pay ₹385.</h3>
+          <p>Join the hive list, then send us your HYROX ticket. We'll reply with your code.</p>
+        </div>
+        <div class="hyrox-offer-actions">
+          <a href="https://wa.me/919363966779" target="_blank" rel="noopener" class="hyrox-btn hyrox-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 20l1.5-5A8.5 8.5 0 1 1 21 11.5z"></path></svg>
+            WhatsApp us</a>
+          <a href="https://instagram.com/rehyve" target="_blank" rel="noopener" class="hyrox-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+            Instagram message</a>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -1614,6 +1648,23 @@ h2 em{color:var(--muted)}
       tab.addEventListener('mouseenter', () => { if (window.matchMedia('(hover:hover)').matches) select(tab, i); });
     });
     select(tabs[0], 0);
+  })();
+
+  /* ---------- HYROX offer glow on jump ---------- */
+  (function hyroxGlow(){
+    const target = document.getElementById('hyrox-deal');
+    if (!target) return;
+    function pulse(){
+      target.classList.remove('glow');
+      void target.offsetWidth;            // restart animation
+      target.classList.add('glow');
+    }
+    // any link pointing to #hyrox-deal triggers the glow after the smooth scroll
+    document.querySelectorAll('a[href="#hyrox-deal"]').forEach(a => {
+      a.addEventListener('click', () => setTimeout(pulse, 520));
+    });
+    // also glow if the page is opened directly on the anchor
+    if (location.hash === '#hyrox-deal') setTimeout(pulse, 700);
   })();
 
   /* ---------- FAQ accordion (animated height, single-open) ---------- */
