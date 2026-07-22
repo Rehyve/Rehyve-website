@@ -2,11 +2,12 @@
 ===============================
 "Refresh. Recover. Rebuild."
 
-reHyve 40g Energy Gel - a fast-absorbing, dual-carb endurance fuel
+reHyve Energy Syrup - an FSSAI-compliant nutraceutical syrup (20 ml daily serve)
 built for runners, cyclists and endurance athletes.
 
 WHAT'S INSIDE
   index.html    The website (open this)
+  checkout.html Payment options page (out-of-stock state)
   styles.css    Styling and animations
   script.js     Interactivity
   assets/       Logos, favicons, wave pattern and icons
