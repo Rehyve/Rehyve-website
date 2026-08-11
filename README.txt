@@ -2,7 +2,7 @@
 ===============================
 "Refresh. Recover. Rebuild."
 
-reHyve Energy Syrup - an FSSAI-compliant nutraceutical syrup (20 ml daily serve)
+reHyve - single-serve performance fuel for endurance athletes
 built for runners, cyclists and endurance athletes.
 
 WHAT'S INSIDE
