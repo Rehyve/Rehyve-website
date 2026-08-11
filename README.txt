@@ -2,12 +2,11 @@
 ===============================
 "Refresh. Recover. Rebuild."
 
-reHyve - single-serve performance fuel for endurance athletes
+reHyve 40g Energy Gel - a fast-absorbing, dual-carb endurance fuel
 built for runners, cyclists and endurance athletes.
 
 WHAT'S INSIDE
   index.html    The website (open this)
-  checkout.html Payment options page (out-of-stock state)
   styles.css    Styling and animations
   script.js     Interactivity
   assets/       Logos, favicons, wave pattern and icons

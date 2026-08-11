@@ -53,7 +53,7 @@
   (function gooey() {
     const t1 = $('#gt1'), t2 = $('#gt2');
     if (!t1 || !t2) return;
-    const texts = ['Concept', 'Performance Fuel', 'Loading…'];
+    const texts = ['Concept', 'Energy Gel', 'Loading…'];
     if (reduce) { t1.textContent = texts[0]; t1.style.opacity = 1; return; }
     const morphTime = 1.1, cooldownTime = 0.35;
     let idx = texts.length - 1, time = new Date(), morph = 0, cooldown = cooldownTime;
