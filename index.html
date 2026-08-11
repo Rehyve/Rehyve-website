@@ -3,6 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+/* Always open at the top on load/reload (browsers otherwise restore the old
+   scroll position, which lands at the bottom while the page is still laying out).
+   Deep links such as index.html#shop are still honoured. */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+(function () {
+  function toTop() {
+    if (location.hash) return;
+    var h = document.documentElement, prev = h.style.scrollBehavior;
+    h.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    h.style.scrollBehavior = prev;
+  }
+  toTop();
+  document.addEventListener('DOMContentLoaded', toTop);
+  window.addEventListener('load', toTop);
+  window.addEventListener('pageshow', function (e) { if (e.persisted) toTop(); });
+})();
+</script>
 <meta name="theme-color" content="#f5f4f0" />
 <title>reHyve</title>
 <!-- build 2026-08-11 · CTAs -> checkout.html -->

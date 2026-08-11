@@ -3,6 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>
+/* Always open at the top on load/reload (browsers otherwise restore the old
+   scroll position, which lands at the bottom while the page is still laying out).
+   Deep links such as index.html#shop are still honoured. */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+(function () {
+  function toTop() {
+    if (location.hash) return;
+    var h = document.documentElement, prev = h.style.scrollBehavior;
+    h.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    h.style.scrollBehavior = prev;
+  }
+  toTop();
+  document.addEventListener('DOMContentLoaded', toTop);
+  window.addEventListener('load', toTop);
+  window.addEventListener('pageshow', function (e) { if (e.persisted) toTop(); });
+})();
+</script>
 <meta name="theme-color" content="#f5f4f0" />
 <title>Checkout — reHyve</title>
 <meta name="description" content="Checkout for reHyve. Currently out of stock — join the list to be notified when the next batch is ready." />
@@ -90,13 +109,15 @@ h1 em{color:var(--muted)}
 /* product gallery */
 .gal{margin-bottom:18px}
 .gal-main{position:relative;border-radius:var(--radius);overflow:hidden;background:#f2c94c;
-  aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
-.gal-main img{width:100%;height:100%;object-fit:contain;filter:grayscale(.3) brightness(.92);transition:opacity .25s var(--ease)}
-.gal-main::after{content:"";position:absolute;inset:0;background:rgba(26,26,26,.14);pointer-events:none}
-.gal-main .oos-stamp{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-7deg);
-  border:2.5px solid #fff;color:#fff;font-size:15px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
-  padding:10px 22px;border-radius:10px;background:rgba(26,26,26,.5);white-space:nowrap;pointer-events:none}
-.gal-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+  aspect-ratio:3/4;display:flex;align-items:center;justify-content:center}
+.gal-main img{width:100%;height:100%;object-fit:cover;filter:grayscale(.18) brightness(.96);transition:opacity .25s var(--ease)}
+.gal-main::after{content:"";position:absolute;inset:0;background:rgba(26,26,26,.06);pointer-events:none}
+/* corner badge rather than a centre stamp, so it never covers the artwork */
+.gal-main .oos-stamp{position:absolute;z-index:2;left:12px;top:12px;
+  color:#fff;font-size:10.5px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 13px;border-radius:100px;background:rgba(194,91,91,.94);
+  box-shadow:0 6px 18px -6px rgba(26,26,26,.5);white-space:nowrap;pointer-events:none}
+.gal-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}
 .gal-thumb{position:relative;border-radius:12px;overflow:hidden;border:2px solid transparent;background:#f2c94c;
   aspect-ratio:1;padding:0;cursor:pointer;transition:border-color .2s var(--ease),transform .2s var(--ease)}
 .gal-thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) brightness(.94)}
@@ -205,27 +226,30 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
 
       <div class="gal">
         <div class="gal-main">
-          <img id="galMain" src="assets/product/pouch-hand.jpg" alt="reHyve pouch held in hand" />
+          <img id="galMain" src="assets/product/img-01.jpg" alt="reHyve product pack" />
           <span class="oos-stamp">Out of Stock</span>
         </div>
         <div class="gal-thumbs" role="group" aria-label="Product images">
-          <button class="gal-thumb" type="button" aria-current="true" data-src="assets/product/pouch-hand.jpg" aria-label="Pouch in hand">
-            <img src="assets/product/pouch-hand.jpg" alt="" />
+          <button class="gal-thumb" type="button" aria-current="true" data-src="assets/product/img-01.jpg" aria-label="reHyve product pack">
+            <img src="assets/product/img-01.jpg" alt="" loading="lazy" />
           </button>
-          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/pouch.jpg" aria-label="Product pouch">
-            <img src="assets/product/pouch.jpg" alt="" />
+          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/img-02.jpg" aria-label="reHyve pack held in hand">
+            <img src="assets/product/img-02.jpg" alt="" loading="lazy" />
           </button>
-          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/inuse.jpg" aria-label="In use during training">
-            <img src="assets/product/inuse.jpg" alt="" />
+          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/img-03.jpg" aria-label="Ideal for cycling and running">
+            <img src="assets/product/img-03.jpg" alt="" loading="lazy" />
           </button>
-          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/lifestyle.jpg" aria-label="Ideal for cycling and running">
-            <img src="assets/product/lifestyle.jpg" alt="" />
+          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/img-04.jpg" aria-label="reHyve in use during training">
+            <img src="assets/product/img-04.jpg" alt="" loading="lazy" />
+          </button>
+          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/img-05.jpg" aria-label="Nutritional information panel">
+            <img src="assets/product/img-05.jpg" alt="" loading="lazy" />
           </button>
         </div>
       </div>
 
       <div class="prod">
-        <span class="prod-badge"><img src="assets/product/pouch.jpg" alt="reHyve pouch" /></span>
+        <span class="prod-badge"><img src="assets/product/img-01.jpg" alt="reHyve pack" /></span>
         <div>
           <h3>reHyve · 5 Pack</h3>
           <p>Food Category 13.6 — Food Supplements</p>

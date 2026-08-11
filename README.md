@@ -5,7 +5,7 @@ Marketing site for reHyve — performance nutrition.
 | File | Purpose |
 |---|---|
 | `index.html` | Home page (self-contained: CSS and images inlined) |
-| `checkout.html` | Payment options page with product gallery |
+| `checkout.html` | Payment options page with 5-image product gallery |
 | `styles.css` / `script.js` | Legacy stylesheet and script from the original build |
 | `assets/` | Logo and product photography |
 
