@@ -87,16 +87,24 @@ h1 em{color:var(--muted)}
 .sum-line span:last-child{font-weight:600;white-space:nowrap}
 .sum-total{display:flex;justify-content:space-between;font-size:17px;font-weight:800;padding-top:14px}
 .sum-note{font-size:12px;color:var(--muted);margin-top:6px}
-/* product hero image */
-.prod-hero{position:relative;border-radius:var(--radius);overflow:hidden;margin-bottom:18px;
-  background:linear-gradient(160deg,#f7d76b,#e8bd3a);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center}
-.prod-hero img{height:118%;width:auto;object-fit:contain;filter:grayscale(.55) brightness(.82);transition:filter .4s var(--ease)}
-.prod-hero::after{content:"";position:absolute;inset:0;background:rgba(26,26,26,.28)}
-.prod-hero .oos-stamp{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-7deg);
+/* product gallery */
+.gal{margin-bottom:18px}
+.gal-main{position:relative;border-radius:var(--radius);overflow:hidden;background:#f2c94c;
+  aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.gal-main img{width:100%;height:100%;object-fit:contain;filter:grayscale(.3) brightness(.92);transition:opacity .25s var(--ease)}
+.gal-main::after{content:"";position:absolute;inset:0;background:rgba(26,26,26,.14);pointer-events:none}
+.gal-main .oos-stamp{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-7deg);
   border:2.5px solid #fff;color:#fff;font-size:15px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;
-  padding:10px 22px;border-radius:10px;background:rgba(26,26,26,.42);backdrop-filter:blur(2px);white-space:nowrap}
+  padding:10px 22px;border-radius:10px;background:rgba(26,26,26,.5);white-space:nowrap;pointer-events:none}
+.gal-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.gal-thumb{position:relative;border-radius:12px;overflow:hidden;border:2px solid transparent;background:#f2c94c;
+  aspect-ratio:1;padding:0;cursor:pointer;transition:border-color .2s var(--ease),transform .2s var(--ease)}
+.gal-thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) brightness(.94)}
+.gal-thumb:hover{transform:translateY(-2px)}
+.gal-thumb[aria-current="true"]{border-color:var(--ink)}
 
 .prod{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+
 .prod-badge{width:62px;height:62px;border-radius:14px;overflow:hidden;flex-shrink:0;border:1px solid var(--line);
   background:#f2c94c;display:flex;align-items:center;justify-content:center}
 .prod-badge img{width:100%;height:100%;object-fit:cover;filter:grayscale(.5) brightness(.88)}
@@ -195,9 +203,25 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
       <h2 id="sumTitle">Order summary</h2>
       <p class="sub">Early access pack</p>
 
-      <div class="prod-hero">
-        <img src="assets/product/pouch-hand.jpg" alt="reHyve energy pouch held in hand" />
-        <span class="oos-stamp">Out of Stock</span>
+      <div class="gal">
+        <div class="gal-main">
+          <img id="galMain" src="assets/product/pouch-hand.jpg" alt="reHyve pouch held in hand" />
+          <span class="oos-stamp">Out of Stock</span>
+        </div>
+        <div class="gal-thumbs" role="group" aria-label="Product images">
+          <button class="gal-thumb" type="button" aria-current="true" data-src="assets/product/pouch-hand.jpg" aria-label="Pouch in hand">
+            <img src="assets/product/pouch-hand.jpg" alt="" />
+          </button>
+          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/pouch.jpg" aria-label="Product pouch">
+            <img src="assets/product/pouch.jpg" alt="" />
+          </button>
+          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/inuse.jpg" aria-label="In use during training">
+            <img src="assets/product/inuse.jpg" alt="" />
+          </button>
+          <button class="gal-thumb" type="button" aria-current="false" data-src="assets/product/lifestyle.jpg" aria-label="Ideal for cycling and running">
+            <img src="assets/product/lifestyle.jpg" alt="" />
+          </button>
+        </div>
       </div>
 
       <div class="prod">
@@ -230,6 +254,23 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
 </footer>
 
 <script>
+// ---- product gallery ----
+(function () {
+  const main = document.getElementById('galMain');
+  document.querySelectorAll('.gal-thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.gal-thumb').forEach(b => b.setAttribute('aria-current', 'false'));
+      btn.setAttribute('aria-current', 'true');
+      main.style.opacity = '0';
+      setTimeout(() => {
+        main.src = btn.dataset.src;
+        main.alt = btn.getAttribute('aria-label');
+        main.style.opacity = '1';
+      }, 150);
+    });
+  });
+})();
+
 // Flip to true when the next batch is live — enables UPI + WhatsApp payment options.
 const IN_STOCK = false;
 
@@ -242,7 +283,7 @@ if (IN_STOCK) {
   btn.disabled = false;
   btn.classList.remove('is-off');
   btn.textContent = 'Pay ₹550';
-  document.querySelectorAll('.oos-chip,.stock-banner').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.oos-chip,.oos-stamp,.stock-banner').forEach(el => el.style.display = 'none');
 }
 </script>
 
