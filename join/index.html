@@ -3,75 +3,152 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#f5f4f0" />
-<title>Join the hive — reHyve</title>
-<meta name="description" content="Join the reHyve prelaunch list for early access, launch drops and 10% off your first order." />
+<meta name="theme-color" content="#371931" />
+<title>Welcome — andPeople × reHyve</title>
+<meta name="description" content="Thanks for joining us at the wellness session. Join the reHyve prelaunch list for your event discount." />
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@1,8..60,300&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;1,8..60,300&display=swap" rel="stylesheet" />
 <style>
 :root{
-  --ink:#1a1a1a; --paper:#f5f4f0; --muted:#6a6862;
-  --line:rgba(26,26,26,.12); --green:#6ba292; --red:#c25b5b;
+  --plum:#371931;          /* andPeople brand purple */
+  --plum-2:#4a2342;
+  --cream:#f7ece2;         /* andPeople cream */
+  --ink:#1a1a1a;
+  --paper:#f5f4f0;
+  --muted:#6a6862;
+  --line:rgba(26,26,26,.12);
+  --green:#6ba292;
+  --red:#c25b5b;
   --sans:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
   --serif:'Source Serif 4',Georgia,serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%}
-body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;
-  -webkit-font-smoothing:antialiased;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;padding:28px 22px;text-align:center}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
-em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--muted)}
+em{font-family:var(--serif);font-style:italic;font-weight:300}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 
-.logo{height:30px;width:auto;margin:0 auto 34px}
-.tag{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);
-  font-size:10px;font-weight:700;letter-spacing:.14em;padding:7px 15px;border-radius:100px;margin-bottom:20px}
-.dot{width:5px;height:5px;border-radius:50%;background:#f2c94c;animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+/* ---------- host banner ---------- */
+.host{background:var(--plum);color:var(--cream);text-align:center;
+  padding:34px 22px 30px;position:relative;overflow:hidden}
+.host::after{content:"";position:absolute;left:50%;bottom:-70px;transform:translateX(-50%);
+  width:180%;height:140px;background:var(--paper);border-radius:50% 50% 0 0}
+.host-logo{height:52px;width:auto;margin:0 auto 14px}
+.host-line{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.72}
+.host-sub{font-size:12.5px;opacity:.6;margin-top:6px}
 
-h1{font-size:clamp(2.1rem,8vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1.03}
-.sub{font-size:clamp(15px,3.6vw,17px);color:var(--muted);max-width:34ch;margin:18px auto 0}
+/* ---------- body ---------- */
+.wrap{max-width:520px;margin:0 auto;padding:0 22px 60px;text-align:center;position:relative;z-index:2}
+.hi{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);margin-top:26px}
+h1{font-size:clamp(2rem,7.5vw,2.9rem);font-weight:800;letter-spacing:-.04em;
+  line-height:1.05;margin-top:12px}
+h1 em{color:var(--muted)}
+.lead{font-size:clamp(15px,3.6vw,16.5px);color:var(--muted);margin:16px auto 0;max-width:38ch}
 
-form{display:flex;gap:10px;width:100%;max-width:430px;margin:32px auto 0;flex-wrap:wrap}
-input[type=email]{flex:1 1 200px;min-width:0;font-family:inherit;font-size:15px;
+.brandmark{display:flex;align-items:center;justify-content:center;gap:12px;margin:30px auto 0}
+.brandmark img{height:22px;width:auto;opacity:.9}
+.brandmark span{font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+
+/* ---------- offer ---------- */
+.offer{margin:28px auto 0;background:#fff;border:1px solid var(--line);
+  border-radius:20px;padding:22px 20px}
+.offer-top{font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted)}
+.offer-rows{display:flex;flex-direction:column;gap:8px;margin-top:14px;text-align:left}
+.orow{display:flex;align-items:center;gap:11px;font-size:14.5px;font-weight:600}
+.orow .tick{width:19px;height:19px;border-radius:50%;background:rgba(107,162,146,.16);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.orow .tick svg{width:11px;height:11px;stroke:var(--green);fill:none;stroke-width:3;
+  stroke-linecap:round;stroke-linejoin:round}
+.orow small{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.45}
+
+/* ---------- form ---------- */
+form{display:flex;gap:9px;margin:24px auto 0;flex-wrap:wrap}
+input[type=email]{flex:1 1 190px;min-width:0;font-family:inherit;font-size:16px;
   padding:15px 20px;border-radius:100px;border:1.5px solid var(--line);
   background:#fff;color:var(--ink);transition:border-color .25s}
-input[type=email]:focus{outline:none;border-color:var(--ink)}
-button{font-family:inherit;cursor:pointer;border:none;font-size:14px;font-weight:600;
-  padding:15px 28px;border-radius:100px;background:var(--ink);color:var(--paper);
-  transition:transform .25s var(--ease),box-shadow .25s}
-button:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(26,26,26,.5)}
-.msg{font-size:14px;font-weight:600;margin-top:16px;min-height:22px}
-.fine{font-size:12.5px;color:var(--muted);margin-top:10px}
+input[type=email]:focus{outline:none;border-color:var(--plum)}
+button{font-family:inherit;cursor:pointer;border:none;font-size:14px;font-weight:700;
+  padding:15px 26px;border-radius:100px;background:var(--plum);color:var(--cream);
+  transition:transform .25s var(--ease),box-shadow .25s,background .25s}
+button:hover{background:var(--plum-2);transform:translateY(-2px);
+  box-shadow:0 12px 26px -10px rgba(55,25,49,.6)}
+.msg{font-size:13.5px;font-weight:600;margin-top:12px;min-height:20px}
+.fine{font-size:12px;color:var(--muted);margin-top:8px}
 
-.perks{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:34px}
-.perk{font-size:12px;font-weight:600;color:var(--muted);background:rgba(26,26,26,.04);
-  border:1px solid var(--line);padding:7px 14px;border-radius:100px}
-.back{margin-top:38px;font-size:13.5px;color:var(--muted);text-decoration:none;
-  border-bottom:1px solid var(--line);padding-bottom:2px}
-.back:hover{color:var(--ink)}
-.legal{margin-top:34px;font-size:11px;color:var(--muted);max-width:46ch;line-height:1.6;opacity:.85}
+/* ---------- coupon reveal ---------- */
+.coupon{margin:26px auto 0;background:var(--plum);color:var(--cream);
+  border-radius:22px;padding:26px 22px;
+  opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.coupon.show{opacity:1;transform:none}
+.coupon[hidden]{display:none}
+.c-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.7}
+.c-head{font-size:1.45rem;font-weight:800;letter-spacing:-.03em;margin-top:8px}
+.c-head em{opacity:.75}
+.c-code{margin:18px auto 0;display:flex;align-items:center;justify-content:center;gap:10px;
+  background:rgba(247,236,226,.1);border:1.5px dashed rgba(247,236,226,.45);
+  border-radius:14px;padding:14px 18px;max-width:320px}
+.c-code b{font-family:ui-monospace,Menlo,monospace;font-size:19px;font-weight:700;letter-spacing:.1em}
+.c-copy{background:var(--cream);color:var(--plum);font-size:11.5px;font-weight:800;
+  letter-spacing:.06em;padding:8px 13px;border-radius:100px;flex-shrink:0}
+.c-copy:hover{background:#fff;transform:none;box-shadow:none}
+.c-note{font-size:12.5px;opacity:.72;margin-top:14px;line-height:1.55}
+.c-cta{display:inline-block;margin-top:18px;font-size:13.5px;font-weight:600;
+  color:var(--cream);border-bottom:1px solid rgba(247,236,226,.5);padding-bottom:2px}
+
+.legal{margin-top:34px;font-size:11px;color:var(--muted);line-height:1.6;opacity:.85}
+.legal a{color:var(--muted)}
 </style>
 </head>
 <body>
 
-<main>
-  <img class="logo" src="../assets/logo-black.svg" alt="reHyve" />
+<header class="host">
+  <img class="host-logo" src="../assets/partners/andpeople.png" alt="andPeople" />
+  <p class="host-line">Wellness Session</p>
+  <p class="host-sub">in collaboration with Blue Tokai</p>
+</header>
 
-  <span class="tag"><span class="dot"></span>NOW IN PRELAUNCH</span>
+<main class="wrap">
+  <p class="hi">Thanks for joining us</p>
+  <h1>Welcome to <em>the hive.</em></h1>
+  <p class="lead">Great yoga session. Now recover properly — drop your email below and we'll send your event discount.</p>
 
-  <h1>Join the <em>hive.</em></h1>
-  <p class="sub">Be first to know when we drop — plus 10% off your first order.</p>
+  <div class="brandmark">
+    <span>Fuelled by</span>
+    <img src="../assets/logo-black.svg" alt="reHyve" />
+  </div>
+
+  <section class="offer" aria-label="What you get">
+    <p class="offer-top">Your event perk</p>
+    <div class="offer-rows">
+      <div class="orow">
+        <span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>
+        <span>Prelaunch discount<small>10% off, for everyone on the list</small></span>
+      </div>
+      <div class="orow">
+        <span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>
+        <span>An extra 15% off<small>Event exclusive — today only</small></span>
+      </div>
+      <div class="orow">
+        <span class="tick"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>
+        <span>First access when we launch<small>You'll know before anyone else</small></span>
+      </div>
+    </div>
+  </section>
 
   <form id="joinForm" method="POST"
         action="https://zgp4-zgp4.maillist-manage.in/weboptin.zc"
         target="zcHidden" novalidate>
-    <label class="sr-only" for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Email address</label>
-    <input id="email" name="CONTACT_EMAIL" type="email" placeholder="you@email.com" autocomplete="email" required />
-    <button type="submit">Get 10% off</button>
+    <label class="sr-only" for="email">Email address</label>
+    <input id="email" name="CONTACT_EMAIL" type="email" placeholder="you@email.com"
+           autocomplete="email" inputmode="email" required />
+    <button type="submit">Get my discount</button>
     <input type="hidden" name="submitType" value="optinCustomView" />
     <input type="hidden" name="emailReportId" value="" />
     <input type="hidden" name="formType" value="QuickForm" />
@@ -86,15 +163,19 @@ button:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(26,26,
   </form>
   <iframe name="zcHidden" style="display:none" title="signup"></iframe>
   <p class="msg" id="msg" role="status" aria-live="polite"></p>
-  <p class="fine">No spam. Just early access and the occasional fueling tip.</p>
+  <p class="fine" id="fine">No spam. Just early access and the occasional fueling tip.</p>
 
-  <div class="perks">
-    <span class="perk">10% off first order</span>
-    <span class="perk">Early access</span>
-    <span class="perk">Launch drops</span>
-  </div>
-
-  <a class="back" href="../index.html">Explore reHyve →</a>
+  <section class="coupon" id="coupon" hidden aria-live="polite">
+    <p class="c-eyebrow">You're on the list</p>
+    <p class="c-head">Here's your <em>code.</em></p>
+    <div class="c-code">
+      <b id="codeText">ANDPEOPLE15</b>
+      <button class="c-copy" id="copyBtn" type="button">Copy</button>
+    </div>
+    <p class="c-note">Apply at checkout for your prelaunch discount plus an extra 15% off.
+      We've also emailed it to you — check your inbox to confirm your subscription.</p>
+    <a class="c-cta" href="../index.html">Explore reHyve →</a>
+  </section>
 
   <p class="legal">
     Health supplements are not for medicinal use. Not intended to prevent, treat or cure any disease.
@@ -106,7 +187,11 @@ button:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(26,26,
 (function () {
   var form = document.getElementById('joinForm'),
       input = document.getElementById('email'),
-      msg = document.getElementById('msg');
+      msg = document.getElementById('msg'),
+      fine = document.getElementById('fine'),
+      coupon = document.getElementById('coupon'),
+      copyBtn = document.getElementById('copyBtn'),
+      codeText = document.getElementById('codeText');
 
   form.addEventListener('submit', function (e) {
     var v = (input.value || '').trim();
@@ -117,9 +202,32 @@ button:hover{transform:translateY(-2px);box-shadow:0 12px 28px -10px rgba(26,26,
       input.focus();
       return;
     }
-    msg.style.color = '#6ba292';
-    msg.textContent = "You're on the list. Check your inbox to confirm.";
-    setTimeout(function () { input.value = ''; }, 400);
+    // Valid: the form posts to Zoho via the hidden iframe. Reveal the code.
+    msg.textContent = '';
+    form.hidden = true;
+    fine.hidden = true;
+    coupon.hidden = false;
+    requestAnimationFrame(function () { coupon.classList.add('show'); });
+    setTimeout(function () {
+      coupon.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 220);
+  });
+
+  copyBtn.addEventListener('click', function () {
+    var code = codeText.textContent.trim();
+    function done() {
+      copyBtn.textContent = 'Copied';
+      setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(code).then(done, done);
+    } else {
+      var t = document.createElement('textarea');
+      t.value = code; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(t);
+      done();
+    }
   });
 })();
 </script>
