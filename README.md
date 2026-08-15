@@ -1,17 +1,20 @@
 # reHyve
 
-Marketing site for reHyve — performance nutrition.
+Marketing site for reHyve — performance nutrition. Live at https://rehyve.com
 
-| File | Purpose |
+| Path | Purpose |
 |---|---|
-| `index.html` | Home page (self-contained: CSS and images inlined) |
-| `checkout.html` | Payment options page with 5-image product gallery |
-| `styles.css` / `script.js` | Legacy stylesheet and script from the original build |
+| `index.html` | Home page |
+| `checkout.html` | Payment options, 5-image product gallery |
+| `join/index.html` | Prelaunch signup landing page (QR code destination) |
 | `assets/` | Logo and product photography |
 
-## Viewing locally
+## The flyer QR code
 
-Open `index.html`, or run `python -m http.server 8000` and visit http://localhost:8000
+The event QR points to **https://rehyve.com/join**. That path is served by
+`join/index.html`. Do not rename or delete that folder — printed flyers depend
+on it. To send scanners somewhere else later, edit that file rather than
+changing the URL.
 
 ## Stock status
 
